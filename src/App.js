@@ -12,6 +12,11 @@ export const App = () => {
   const [dogUrl, setDogUrl] = React.useState(
     'https://images.dog.ceo/breeds/deerhound-scottish/n02092002_2558.jpg',
   )
+  const changeDogUrl = async () => {
+    let getdogurl = await fetch('https://dog.ceo/api/breeds/image/random')
+    getdogurl = await getdogurl.json()
+    setDogUrl(getdogurl.message)
+  }
   return (
     <div>
       <header>
@@ -25,15 +30,7 @@ export const App = () => {
           <img src={dogUrl} />
         </div>
         <div>
-          <button
-            onClick={() =>
-              setDogUrl(
-                'https://images.dog.ceo/breeds/weimaraner/n02092339_514.jpg',
-              )
-            }
-          >
-            更新
-          </button>{' '}
+          <button onClick={changeDogUrl}>更新</button>
         </div>
       </main>
     </div>
