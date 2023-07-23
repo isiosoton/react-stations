@@ -19,8 +19,8 @@ export const App = () => {
   }
   return (
     <div>
-      <header>
-        <h1>Dogアプリ</h1>
+      <header className="header">
+        <h1 className="title">Dogアプリ</h1>
       </header>
       <main>
         <div>
