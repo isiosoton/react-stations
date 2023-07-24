@@ -3,7 +3,8 @@
 import * as React from 'react'
 import './App.css'
 import { Header } from './Header'
-import { Description_component } from './Description'
+// import { Description } from './Description'
+import { DogImage } from './DogImage'
 
 /**
  *
@@ -25,7 +26,7 @@ export const App = () => {
         <div>
           <p>犬の画像を表示するサイトです</p>
         </div>
-        <Description_component user={dogUrl} />
+        <DogImage user={dogUrl} />
         <div>
           <button onClick={changeDogUrl}>更新</button>
         </div>
