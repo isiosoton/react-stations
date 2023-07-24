@@ -2,12 +2,13 @@
 
 import * as React from 'react'
 import './App.css'
+import { Header_component } from './Header'
+import { Description_component } from './Description'
 
 /**
  *
  * @type {React.FC}
  */
-
 export const App = () => {
   const [dogUrl, setDogUrl] = React.useState(
     'https://images.dog.ceo/breeds/deerhound-scottish/n02092002_2558.jpg',
@@ -19,16 +20,12 @@ export const App = () => {
   }
   return (
     <div>
-      <header className="header">
-        <h1 className="title">Dogアプリ</h1>
-      </header>
+      <Header_component />
       <main>
         <div>
           <p>犬の画像を表示するサイトです</p>
         </div>
-        <div>
-          <img src={dogUrl} />
-        </div>
+        <Description_component user={dogUrl} />
         <div>
           <button onClick={changeDogUrl}>更新</button>
         </div>
