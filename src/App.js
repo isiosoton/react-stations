@@ -26,7 +26,7 @@ export const App = () => {
         <div>
           <p>犬の画像を表示するサイトです</p>
         </div>
-        <DogImage user={dogUrl} />
+        <DogImage url={dogUrl} />
         <div>
           <button onClick={changeDogUrl}>更新</button>
         </div>
