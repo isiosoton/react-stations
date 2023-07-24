@@ -1,9 +1,16 @@
 import * as React from 'react'
+import { DogImage } from './DogImage'
 
-export function Description_component(props) {
+export function Description(props) {
   return (
-    <div>
-      <img src={props.user} />
-    </div>
+    <main>
+      <div>
+        <p>犬の画像を表示するサイトです</p>
+      </div>
+      <DogImage url={props.url} />
+      <div>
+        <button onClick={props.button}>更新</button>
+      </div>
+    </main>
   )
 }
