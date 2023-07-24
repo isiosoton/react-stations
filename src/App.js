@@ -3,8 +3,8 @@
 import * as React from 'react'
 import './App.css'
 import { Header } from './Header'
-// import { Description } from './Description'
 import { DogImage } from './DogImage'
+import { Description } from './Description'
 
 /**
  *
@@ -22,15 +22,8 @@ export const App = () => {
   return (
     <div>
       <Header />
-      <main>
-        <div>
-          <p>犬の画像を表示するサイトです</p>
-        </div>
-        <DogImage url={dogUrl} />
-        <div>
-          <button onClick={changeDogUrl}>更新</button>
-        </div>
-      </main>
+      <DogImage url={dogUrl} />
+      <Description button={changeDogUrl} />
     </div>
   )
 }
