@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import './App.css'
-import { Header_component } from './Header'
+import { Header } from './Header'
 import { Description_component } from './Description'
 
 /**
@@ -20,7 +20,7 @@ export const App = () => {
   }
   return (
     <div>
-      <Header_component />
+      <Header />
       <main>
         <div>
           <p>犬の画像を表示するサイトです</p>
