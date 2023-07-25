@@ -5,6 +5,7 @@ import './App.css'
 import { Header } from './Header'
 import { DogImage } from './DogImage'
 import { Description } from './Description'
+import { DogListContainer } from './DogListContainer'
 
 /**
  *
@@ -24,6 +25,7 @@ export const App = () => {
       <Header />
       <DogImage url={dogUrl} />
       <Description button={changeDogUrl} />
+      <DogListContainer />
     </div>
   )
 }
