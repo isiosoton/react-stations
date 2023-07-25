@@ -1,14 +1,17 @@
 import * as React from 'react'
 
 export function DogListContainer() {
+  // 初回マウント後にfetch関数を呼び出し、stateを更新
   const [breeds, setBreeds] = React.useState(null)
+
   React.useEffect(() => {
-    ;() => {
-      let getbreeds = fetch('https://dog.ceo/api/breeds/list/all')
-      getbreeds = getbreeds.json()
-      getbreeds = Object.keys(getbreeds.message)
-      setBreeds(getbreeds)
+    const fetch_data = async () => {
+      const responce = await fetch('https://dog.ceo/api/breeds/list/all')
+      const data = await responce.json()
+      const breedNames = Object.keys(data.message)
+      setBreeds(breedNames)
     }
+    fetch_data()
   }, [])
   return <p>{breeds}</p>
 }
