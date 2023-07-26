@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { BreedsSelect } from './BreedsSelect'
 
 export function DogListContainer() {
   // 初回マウント後にfetch関数を呼び出し、stateを更新
@@ -13,5 +14,5 @@ export function DogListContainer() {
     }
     fetch_data()
   }, [])
-  return <p>{breeds}</p>
+  return <BreedsSelect breeds={breeds} />
 }
