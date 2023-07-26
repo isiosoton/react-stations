@@ -17,7 +17,11 @@ export function DogListContainer() {
   }, [])
   return (
     <div>
-      <BreedsSelect breeds={breeds} select={setSelectedBreed} />
+      <BreedsSelect
+        breeds={breeds}
+        select={setSelectedBreed}
+        value={selectedBreed}
+      />
       <p>{selectedBreed}</p>
     </div>
   )
