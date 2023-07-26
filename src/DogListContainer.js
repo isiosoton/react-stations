@@ -4,6 +4,7 @@ import { BreedsSelect } from './BreedsSelect'
 export function DogListContainer() {
   // 初回マウント後にfetch関数を呼び出し、stateを更新
   const [breeds, setBreeds] = React.useState(null)
+  const [selectedBreed, setSelectedBreed] = React.useState(null)
 
   React.useEffect(() => {
     const fetch_data = async () => {
@@ -14,5 +15,10 @@ export function DogListContainer() {
     }
     fetch_data()
   }, [])
-  return <BreedsSelect breeds={breeds} />
+  return (
+    <div>
+      <BreedsSelect breeds={breeds} select={setSelectedBreed} />
+      <p>{selectedBreed}</p>
+    </div>
+  )
 }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 
 export function Description(props) {
   return (
@@ -12,4 +13,8 @@ export function Description(props) {
       </div>
     </main>
   )
+}
+
+Description.propTypes = {
+  button: PropTypes.func,
 }

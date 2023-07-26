@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 
 export function DogImage(props) {
   return (
@@ -6,4 +7,8 @@ export function DogImage(props) {
       <img src={props.url} />
     </div>
   )
+}
+
+DogImage.propTypes = {
+  url: PropTypes.string,
 }
