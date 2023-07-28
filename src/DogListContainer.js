@@ -2,9 +2,11 @@ import * as React from 'react'
 import { BreedsSelect } from './BreedsSelect'
 
 export function DogListContainer() {
-  const [selectedBreed, setSelectedBreed] = React.useState(null)
+  const [selectedBreed, setSelectedBreed] = React.useState('akita')
   const [breeds, setBreeds] = React.useState(null)
-  const [dogImages, setDogImages] = React.useState(null)
+  const [dogImages, setDogImages] = React.useState([
+    'https://images.dog.ceo/breeds/deerhound-scottish/n02092002_2558.jpg',
+  ])
 
   React.useEffect(() => {
     const fetch_data = async () => {
@@ -18,9 +20,10 @@ export function DogListContainer() {
 
   const fetch_images = async () => {
     const max_image = 12
-    const fetch_url = `https://dog.ceo/api/breed/${selectedBreed}/images/${max_image}`
+    const fetch_url = `https://dog.ceo/api/breed/${selectedBreed}/images/random/${max_image}`
     const responce = await fetch(fetch_url)
     const data = await responce.json()
+    console.log(data)
     setDogImages(data.message)
   }
 
@@ -29,8 +32,8 @@ export function DogListContainer() {
       <div>
         <BreedsSelect
           breeds={breeds}
-          select={setSelectedBreed}
           value={selectedBreed}
+          select={setSelectedBreed}
           button={fetch_images}
         />
       </div>
