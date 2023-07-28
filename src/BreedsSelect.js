@@ -18,13 +18,15 @@ export const BreedsSelect = props => {
               </option>
             ))}
         </select>
+        <button onClick={props.button}>更新</button>
       </form>
     </div>
   )
 }
 
 BreedsSelect.propTypes = {
-  breeds: PropTypes.arrayOf(PropTypes.string),
   select: PropTypes.func,
+  button: PropTypes.func,
+  breeds: PropTypes.arrayOf(PropTypes.string),
   value: PropTypes.string,
 }
