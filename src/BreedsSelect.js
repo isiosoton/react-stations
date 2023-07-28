@@ -18,7 +18,7 @@ export const BreedsSelect = props => {
               </option>
             ))}
         </select>
-        <button onClick={props.button}>更新</button>
+        <button onClick={props.button}>表示</button>
       </form>
     </div>
   )
